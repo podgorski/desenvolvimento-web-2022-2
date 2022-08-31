@@ -7,7 +7,7 @@
 | 18/08      | Introdução HTML e CSS  &check;      | Todos itens foram cobertos |
 | 25/08   | Continuação HTML, CSS e Introdução ao JavaScript  &check;  |     Todos itens foram cobertos |
 | 01/09   | JavaScript / ES6|
-| 08/09   | TypeScript |
+| 08/09   | JavaScript / ES6 e Introdução TypeScript |
 | 15/09   | Introdução React |
 | 22/09   | React: Componentes, Estados e Propriedades |
 | 29/09   | AV1 - Prova Online  |
