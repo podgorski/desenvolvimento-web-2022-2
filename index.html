@@ -1,0 +1,23 @@
+
+<html>
+<head>
+    <title>Document</title>
+    <script lang="javascript" src="main.js"></script>
+</head>
+<body>
+    <p>Isso é um teste</p>
+    <p>Isso é um teste</p>
+    <input type="text" id="nome"/>
+    <input type="password" id="senha" />
+    <button onclick="handleEnvio()">Enviar</button>
+    <script>
+        /*
+        var p = document.querySelector('p');
+        p.innerHTML = 'Texto adicionado pelo JS' 
+        */
+        var p = document.querySelectorAll('p');
+        p.forEach(i=>i.innerHTML = colocarExclamacao("testes"))
+
+    </script>
+</body>
+</html>
