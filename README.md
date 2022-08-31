@@ -1,24 +1,37 @@
-# DESENVOLVIMENTO DE APLICAÇÕES WEB
+# Aula 03 
 
-## Plano de Aula
+Nesta aula, iremos conversar a respeito da APS e iremos começar a abordar algumas funcionalidades trazidas com o ES6 para a linguagem Javascript.
 
-| Data      | Plano de Aula| Feedback|
-| ----------- | ----------- |----------- |
-| 18/08      | Introdução HTML e CSS  &check;      | Todos itens foram cobertos |
-| 25/08   | Continuação HTML, CSS e Introdução ao JavaScript  &check;  |     Todos itens foram cobertos |
-| 01/09   | JavaScript / ES6|
-| 08/09   | TypeScript |
-| 15/09   | Introdução React |
-| 22/09   | React: Componentes, Estados e Propriedades |
-| 29/09   | AV1 - Prova Online  |
-| 06/10   | Vista de Prova |
-| 13/10   | React: Utilizando o Next |
-| 20/10   | React: Context API - Motivação |
-| 27/10   | React: Context API - Utilização|
-| 03/11   | React: Firebase Auth |
-| 10/11   | React: Firebase Auth |
-| 17/11   | AV2 - Prova em Sala - Online  |
-| 24/11   | Vista de Prova |
-| 01/12   | AV3 - Prova Online  |
-| 08/12   | Vista de Prova | 
+## Brainstorm e APS (AV1 e AV2)
+
+### O Problema
+### Solução Proposta
+### MVP
+
+## Introdução JS / ES6
+
+### Definindo variáveis
+
+### - Template literals
+
+### - Operadores rest e spread
+
+### - Desestruturação Objetos e Arrays
+
+### - Métodos auxliares para o array
+
+### - Valores Default
+
+### - Arrow function
+
+### - Promises / Async Await
+
+### - Classes
+
+### - Modules Import / Export
+
+
+
+
+
 
