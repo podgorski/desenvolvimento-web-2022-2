@@ -6,8 +6,8 @@
 | ----------- | ----------- |----------- |
 | 18/08      | Introdução HTML e CSS  &check;      | Todos itens foram cobertos |
 | 25/08   | Continuação HTML, CSS e Introdução ao JavaScript  &check;  |     Todos itens foram cobertos |
-| 01/09   &check;| JavaScript / ES6| Todos itens foram cobertos  - falta nota de aula |
-| 08/09  &check; | JavaScript / ES6 e Introdução TypeScript | Removido TypeScript
+| 01/09   &check;| JavaScript / ES6|  Itens foram cobertos  - falta nota de aula |
+| 08/09  &check; | JavaScript / ES6 e Introdução TypeScript | itens exemplificados e *Remoção TypeScript
 | 15/09   | Introdução React |
 | 22/09   | React: Componentes, Estados e Propriedades |
 | 29/09   | AV1 - Prova Online  |
@@ -22,3 +22,8 @@
 | 01/12   | AV3 - Prova Online  |
 | 08/12   | Vista de Prova | 
 
+#### Observações Gerais:
+
+
+
+> **_Remoção TypeScript:_** TypeScript foi removido a fim de diminuir a curva de aprendizado, e será tratado em uma trilha adicional ao conteúdo.
