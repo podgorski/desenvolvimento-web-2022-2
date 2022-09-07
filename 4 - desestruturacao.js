@@ -1,17 +1,52 @@
-let aluno = {
+let pessoa = {
     nome: 'Antonio Podgorski',
     idade:37,
-    cpf:'111.111.111-11',
+    endereco: {
+        cep:'20270332',
+        rua:'Rua da Feira'
+    },
     formacao:{
         graduacao:'Unicarioca',
         mestrado:'IME'
-    },
-    
+    }
 }
 
-// let cpf = aluno.cpf
-// let nome = aluno.nome
-// let universidades = formacao.graduacao +','+formacao.mestrado
-let {nome,cpf,formacao: {...universidades}} = aluno
+// 'xxx mora na rua xxx tem formacoes'
 
-console.log(`O CPF do ${nome} é ${cpf}, e se formou em: ${Object.values(universidades)} `)
+//let nome = pessoa.nome
+//let rua = pessoa.endereco.cep
+//let universidades = pessoa.formacao.graduacao + ',' + pessoa.formacao.mestrado
+
+let {nome,endereco:{rua},formacao:{...universidades}} = pessoa
+// console.log(JSON.stringify(universidades,null,2))
+// console.log(`${nome} mora na rua ${rua} tem formacoes: ${Object.values(universidades)} `)
+
+let coordenadas = [2,3]
+
+// let latitude = coordenadas[0]
+// let longitudade = coordenadas[1]
+
+let [latitude,longitudade] = coordenadas
+
+// console.log(latitude,longitudade)
+
+let turmaA = ['pedro','joao','maria']
+let turmaB = ['antonio','isadora','rosangela']
+
+let candidatos = [...turmaA,...turmaB]
+
+
+
+function resultadoProva([primeiro,segundo,...outros]){
+    // let primeiro = candidatos[0];
+    // let segundo = candidatos[1];
+    // let outros = candidatos.slice(2,candidatos.lenght)
+
+    console.log(primeiro,segundo,outros)
+}
+
+resultadoProva(candidatos)
+
+let {idade:id,...dados} = pessoa;
+
+console.log(id,dados)
