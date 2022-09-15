@@ -40,8 +40,10 @@ let words = [
     },
 ]
 ```
-- Pontuação Bônus: Implementar banco de palavras, palavras do usuário ou gamificação
 - Pode se utilizar javascript ou typescript, em possíveis implementações
+
+
+> **_Pontuação Bônus:_** Implementar banco de palavras, palavras do usuário ou gamificação.
 
 
 ## APS
