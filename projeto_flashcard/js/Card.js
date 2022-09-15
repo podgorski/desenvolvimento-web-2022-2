@@ -20,13 +20,13 @@ export default class Card {
     render(id){
         let that = this;
 
-        let tree = document.createDocumentFragment();
-        let link = document.createElement("div");
-        link.setAttribute("class", "caixa-card");
+        let root = document.createDocumentFragment();
+        let caixaCards = document.createElement("div");
+        caixaCards.setAttribute("class", "caixa-card");
 
         
-        let div = document.createElement("div");
-        div.addEventListener("click" ,function() { 
+        let card = document.createElement("div");
+        card.addEventListener("click" ,function() { 
             if (!that.opened){
 
                 Swal.fire({
@@ -46,36 +46,36 @@ export default class Card {
                 
             }
         });
-        div.addEventListener("mouseleave" ,function() { 
+        card.addEventListener("mouseleave" ,function() { 
             if (that.opened){
                 //this.setAttribute("class", "card noHover")
             }
             
         });
-        div.setAttribute("class", "card");
-        div.setAttribute("id", `card-${id}`);
+        card.setAttribute("class", "card");
+        card.setAttribute("id", `card-${id}`);
 
         let content = document.createElement("div");
         content.setAttribute("class", "content");
 
-        let open = document.createElement("div");
-        open.setAttribute("class", "front");
+        let front = document.createElement("div");
+        front.setAttribute("class", "front");
 
-        open.appendChild(document.createTextNode(`${that.content.open}`));        
+        front.appendChild(document.createTextNode(`${that.content.open}`));        
 
-        let hide = document.createElement("div");
-        hide.setAttribute("class", "back");
+        let back = document.createElement("div");
+        back.setAttribute("class", "back");
 
-        hide.appendChild(document.createTextNode(`${that.content.hide}`));
+        back.appendChild(document.createTextNode(`${that.content.hide}`));
 
-        content.appendChild(open);
-        content.appendChild(hide);
+        content.appendChild(front);
+        content.appendChild(back);
 
-        div.appendChild(content);
+        card.appendChild(content);
 
-        link.appendChild(div);
-        tree.appendChild(link);
+        caixaCards.appendChild(card);
+        root.appendChild(caixaCards);
 
-        return tree
+        return root
     }
 }

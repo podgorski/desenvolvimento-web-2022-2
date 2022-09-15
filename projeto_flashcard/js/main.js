@@ -1,6 +1,6 @@
-import Box from "./Box.js";
+import Game from "./Game.js";
 
-let box = new Box(4,1)
+let box = new Game(4,1)
 
 box.chooseCards()
 
@@ -9,8 +9,8 @@ console.log(box)
 let caixaCards = document.getElementById("caixa-cards")
 
 for (let [i, card] of box.getCards().entries()){
-    let tree = card.render(i,card)
-    caixaCards.appendChild(tree);
+    let root = card.render(i)
+    caixaCards.appendChild(root);
 }
 
 

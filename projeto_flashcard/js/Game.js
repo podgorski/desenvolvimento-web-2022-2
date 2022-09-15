@@ -1,7 +1,7 @@
 import {words} from './words.js'
 import Card from "./Card.js";
 
-export default class Box {
+export default class Game {
     quantity;
     level;
     cards = [];
