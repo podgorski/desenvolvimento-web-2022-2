@@ -1,5 +1,4 @@
 # Aula 03 e Aula 04
-
 ## Introdução JS / ES6
 
 O nome oficial da linguagem javascript é ECMAScript. E ES é simplesmente uma abreviação do mesmo. ES6 ou ES2015, foi a proposta do comite responsável pela linguagem a fim de se realizar um release anual, apresentando evoluções na linguagem.
