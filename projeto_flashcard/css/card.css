@@ -71,7 +71,12 @@ body {
     align-items: center;
  
 }
-
+.titulo{
+  flex:1;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
 #container-topo {
     display: flex;
     align-items: center;
@@ -80,4 +85,15 @@ body {
     font-size: 80px;
     color:#ccc;
     font-family: 'Lily Script One';
+    margin:30px
+}
+
+#container-topo .xp{
+  font-size: 80px;
+  font-family: 'Roboto';
+}
+
+#container-topo .xp span{
+  font-size: 40px;
+  font-family: 'Roboto';
 }

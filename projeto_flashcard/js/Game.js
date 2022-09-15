@@ -3,7 +3,6 @@ import Card from "./Card.js";
 
 export default class Game {
     quantity;
-    level;
     cards = [];
     constructor(quantity, level){
         this.quantity = quantity
