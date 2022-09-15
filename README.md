@@ -26,8 +26,10 @@ Nesta primeira entrega é esperado do grupo:
 - Definir e documentar a estratégia, a fim de criar um banco de palavras
 - Criar uma metodologia, uma heurística para apresentar as palavras ao usuário
 - Criar uma metodologia para gamificação
-- Pelo menos iniciar a implementação das estratégias, mesmo que mockadas, em um arquivo node separados, ou dentro da própria solução.
-- Os exemplos podem utilizar estruturas de array, conforme o exemplo.
+- Transpor, o layout e implementação atual para o React
+- Os exemplos podem utilizar estruturas de array, conforme o exemplo. (banco em memória)
+- Pontuação Bônus: Implementar banco de palavras, palavras do usuário ou gamificação
+
 ```js
 let words = [
     {
@@ -51,4 +53,6 @@ let words = [
 
 ## Entrega
 
-Poderá ter até 06 integrantes e entrega deverá ocorrer até a data 02/10.
+- Poderá ter até 06 integrantes e entrega deverá ocorrer até a data 02/10;
+- Deverá seguir as normas da ABNT;
+- Códigos devem ser adicionados a um repositório git e adicionado ao documento.
