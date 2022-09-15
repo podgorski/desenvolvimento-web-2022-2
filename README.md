@@ -28,8 +28,6 @@ Nesta primeira entrega é esperado do grupo:
 - Criar uma metodologia para gamificação
 - Transpor, o layout e implementação atual para o React
 - Os exemplos podem utilizar estruturas de array, conforme o exemplo. (banco em memória)
-- Pontuação Bônus: Implementar banco de palavras, palavras do usuário ou gamificação
-
 ```js
 let words = [
     {
@@ -42,6 +40,7 @@ let words = [
     },
 ]
 ```
+- Pontuação Bônus: Implementar banco de palavras, palavras do usuário ou gamificação
 - Pode se utilizar javascript ou typescript, em possíveis implementações
 
 
