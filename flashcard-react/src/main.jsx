@@ -2,14 +2,40 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import Game from './pages/Game'
+import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 
 import { GamificationProvider } from "./contexts/Gamification"
+import Dashboard from './pages/Dashboard'
+import Login from './pages/Login'
+import ProtectedRoutes from './pages/ProtectedRoutes';
+import { UsuarioProvider } from './contexts/User';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+
   <React.StrictMode>
-    <GamificationProvider>
-      <Game />
-    </GamificationProvider>
+
+    <UsuarioProvider>
+      <GamificationProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path={"login"} element={<Login />} />
+            <Route element={<ProtectedRoutes />}>
+              <Route path={"game"} element={<Game />} />
+              <Route path={"dashboard"} element={<Dashboard />} />
+            </Route>
+
+            <Route path={"/"} element={<Navigate to={"/login"} />} />
+          </Routes>
+        </BrowserRouter>
+      </GamificationProvider>
+    </UsuarioProvider>
+
+
+
+    {/* <Game /> */}
+    {/* <Dashboard /> */}
+    {/* <Login /> */}
+
   </React.StrictMode>
 )
