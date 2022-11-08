@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDAOjWMXUdpBrKeX6q-hUC67rU0ObgsRIo",
+    apiKey: "xxxxxxxxxxxxxx-xxxxxxxxxx",
     authDomain: "react-quinta.firebaseapp.com",
     projectId: "react-quinta",
     storageBucket: "react-quinta.appspot.com",
-    messagingSenderId: "57892363636",
-    appId: "1:57892363636:web:6bd45ca66041116f70e021"
+    messagingSenderId: "xxxxxxxxxx",
+    appId: "1:xxxxxxxxxxxxx"
 };
 
 // Initialize Firebase
