@@ -1,104 +1,115 @@
-import { Link } from 'react-router-dom'
-import './style.css'
+import { UsuarioContext } from '../../contexts/User';
 
-import { UsuarioContext } from "../../contexts/User";
-import { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from 'react';
 
-import {
-    collection,
-    getDocs,
-    getFirestore,
-    addDoc,
-    doc,
-    onSnapshot,
-    query,
-    where
-} from "firebase/firestore";
-import firebaseApp from "../../services/firebase";
+import { addDoc, collection, getDocs, getFirestore, onSnapshot, query, where } from 'firebase/firestore';
+import { useState } from 'react';
+
+import firebaseApp from '../../services/firebase';
+import { useEffect } from 'react';
+import { async } from '@firebase/util';
 
 export default function Dashboard() {
 
-    const db = getFirestore(firebaseApp);
+    const db = getFirestore(firebaseApp)
 
-    const [cities, setCities] = useState([]);
+    const { signOut, user } = useContext(UsuarioContext)
 
-    const { signOut } = useContext(UsuarioContext);
+    const [message, setMessage] = useState("")
+
+    const [messages, setMessages] = useState([])
+
+    const navigate = useNavigate();
+
 
     useEffect(() => {
 
-        const q = query(collection(db, "cities"), where("name", "==", "Tokyo"));
-        const unsubscribe = onSnapshot(q, (querySnapshot) => {
-            const cities = [];
-            querySnapshot.forEach((doc) => {
-                cities.push({
-                    ...doc.data(),
-                    id: doc.id
-                });
-            });
-            setCities([...cities])
-            console.log("Current cities in CA: ", cities.join(", "));
-        });
+        const q = query(collection(db, "messages"), where("room", "==", "flash-01"))
 
-        // const handleSelect = async () => {
-        //     const querySnapshot = await getDocs(collection(db, "cities"));
-        //     let aux = [];
-        //     querySnapshot.forEach((doc) => {
-        //         // doc.data() is never undefined for query doc snapshots
-        //         //console.log(doc.id, " => ", doc.data());
+        onSnapshot(q, (querySnapshot) => {
+            const aux = []
+            querySnapshot.forEach((doc) => {
+                console.log(doc.id, doc.data())
+                aux.push({
+                    id: doc.id,
+                    ...doc.data()
+                })
+
+            })
+            setMessages([...aux])
+        })
+        // const getMessagesDB = async () => {
+        //     const docs = await getDocs(collection(db, "messages"))
+
+        //     const aux = []
+        //     docs.forEach((doc) => {
+        //         console.log(doc.id, doc.data())
         //         aux.push({
-        //             ...doc.data(),
-        //             id: doc.id
-        //         });
-        //     });
-        //     //console.log(aux);
-        //     setCities([...aux]);
-        // };
-        // handleSelect();
-    }, []);
+        //             id: doc.id,
+        //             ...doc.data()
+        //         })
+
+        //     })
+        //     setMessages([...aux])
+        // }
+        // getMessagesDB()
+    }, [])
+
 
     const handleAdd = async () => {
-        try {
-            const docRef = await addDoc(collection(db, "cities"), {
-                name: "Tokyo",
-                country: "Japan"
-            });
-            console.log("Document written with ID: ", docRef.id);
-        } catch { }
-    };
 
+        const message_json = {
+            email: user.email,
+            message,
+            room: 'flash-01'
+        }
+
+        const docref = await addDoc(collection(db, "messages"), message_json)
+
+        //message_json['id'] = docref.id
+
+        //console.log('referencia do doc', docref.id)
+
+        //setMessages([...messages, message_json])
+        setMessage("")
+    }
 
     return (
         <>
-
             <h1>Dashboard</h1>
 
 
-            <button
-                onClick={() => {
-                    handleAdd();
-                }}
-            >
-                adicionar
-            </button>
 
-            {cities?.map((city) => (
-                <div key={city.id}>
-                    <p>{city.id}-{city.name}</p>
-                </div>
+            <input type="text" value={message} onChange={(e) => { setMessage(e.target.value) }} />
 
-            ))}
+            <button onClick={() => { handleAdd() }}>Enviar</button>
 
+            <div>
 
-            <div style={{ marginBottom: 15 }}>
-                <Link to="/game">game</Link>
+                {messages.map((m) => (
+                    <div key={m.id}>
+                        <p style={{ fontSize: '10px', fontFamily: 'sans-serif' }}>{m.email}</p>
+                        <div style={{ borderBottom: '1px solid #ccc', marginBottom: '20px' }} >{m.message}</div>
+                    </div>
+                ))}
             </div>
-            <button
-                onClick={() => {
-                    signOut();
-                }}
-            >
-                Logout
-            </button>
+
+            <p>
+
+                <button
+                    onClick={() => {
+                        signOut()
+                        navigate('/login')
+                    }}
+                >Sair</button>
+            </p>
+
+            <div>
+                <Link to="/game">Ir para o Jogo</Link>
+            </div>
+
         </>
+
     )
 }
