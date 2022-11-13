@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.xp {
+    font-size: 80px;
+    font-family: 'Roboto';
+}
+
+.xp span {
+    font-size: 40px;
+    font-family: 'Roboto';
+}
